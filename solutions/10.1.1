@@ -1,0 +1,235 @@
+=========================
+Step 1 [1]
+
+?- [[all x [F x]] <=> [~ [exists x [~ [F x]]]]]
+
+ 
+> <=>r
+=========================
+Step 2 [1]
+
+?- [[[all x [F x]] => [~ [exists x [~ [F x]]]]] & [[~ [exists x [~ [F x]]]] => [all x [F x]]]]
+
+ 
+> &r
+=========================
+Step 3 [2]
+
+?- [[all x [F x]] => [~ [exists x [~ [F x]]]]]
+
+ 
+> =>r
+=========================
+Step 4 [2]
+
+?- [~ [exists x [~ [F x]]]]
+
+1. [all x [F x]]
+ 
+> ~r
+=========================
+Step 5 [2]
+
+?- [[exists x [~ [F x]]] => falsum]
+
+1. [all x [F x]]
+ 
+> =>r
+=========================
+Step 6 [2]
+
+?- falsum
+
+1. [exists x [~ [F x]]]
+2. [all x [F x]]
+ 
+> existsl
+=========================
+Step 7 [2]
+
+?- falsum
+
+1. [~ [F term4718]]
+2. [all x [F x]]
+ 
+> ~l
+=========================
+Step 8 [2]
+
+?- falsum
+
+1. [[F term4718] => falsum]
+2. [all x [F x]]
+ 
+> =>l
+=========================
+Step 9 [2]
+
+?- [F term4718]
+
+1. [[F term4718] => falsum]
+2. [all x [F x]]
+ 
+> (alll term4718)
+=========================
+Step 10 [2]
+
+?- [F term4718]
+
+1. [[F term4718] => falsum]
+2. [F term4718]
+3. [all x [F x]]
+ 
+> hyp
+=========================
+Step 11 [1]
+
+?- [[~ [exists x [~ [F x]]]] => [all x [F x]]]
+
+ 
+> =>r
+=========================
+Step 12 [1]
+
+?- [all x [F x]]
+
+1. [~ [exists x [~ [F x]]]]
+ 
+> allr
+=========================
+Step 13 [1]
+
+?- [F term4720]
+
+1. [~ [exists x [~ [F x]]]]
+ 
+> ~l
+=========================
+Step 14 [1]
+
+?- [F term4720]
+
+1. [[exists x [~ [F x]]] => falsum]
+ 
+> (lemma [[F term4720] v [~ [F term4720]]])
+=========================
+Step 15 [2]
+
+?- [[F term4720] v [~ [F term4720]]]
+
+1. [[exists x [~ [F x]]] => falsum]
+ 
+> lem
+=========================
+Step 16 [1]
+
+?- [F term4720]
+
+1. [[F term4720] v [~ [F term4720]]]
+2. [[exists x [~ [F x]]] => falsum]
+ 
+> vl
+=========================
+Step 17 [2]
+
+?- [F term4720]
+
+1. [F term4720]
+2. [[exists x [~ [F x]]] => falsum]
+ 
+> hyp
+=========================
+Step 18 [1]
+
+?- [F term4720]
+
+1. [~ [F term4720]]
+2. [[exists x [~ [F x]]] => falsum]
+ 
+> ~l
+=========================
+Step 19 [1]
+
+?- [F term4720]
+
+1. [[F term4720] => falsum]
+2. [[exists x [~ [F x]]] => falsum]
+ 
+> exp
+=========================
+Step 20 [1]
+
+?- falsum
+
+1. [[F term4720] => falsum]
+2. [[exists x [~ [F x]]] => falsum]
+ 
+> (swap 1 2)
+=========================
+Step 21 [1]
+
+?- falsum
+
+1. [[exists x [~ [F x]]] => falsum]
+2. [[F term4720] => falsum]
+ 
+> =>l
+=========================
+Step 22 [1]
+
+?- [exists x [~ [F x]]]
+
+1. [[exists x [~ [F x]]] => falsum]
+2. [[F term4720] => falsum]
+ 
+> (existsr term4720)
+=========================
+Step 23 [1]
+
+?- [~ [F term4720]]
+
+1. [[exists x [~ [F x]]] => falsum]
+2. [[F term4720] => falsum]
+ 
+> ~r
+=========================
+Step 24 [1]
+
+?- [[F term4720] => falsum]
+
+1. [[exists x [~ [F x]]] => falsum]
+2. [[F term4720] => falsum]
+ 
+> =>r
+=========================
+Step 25 [1]
+
+?- falsum
+
+1. [F term4720]
+2. [[exists x [~ [F x]]] => falsum]
+3. [[F term4720] => falsum]
+ 
+> (swap 2 3)
+=========================
+Step 26 [1]
+
+?- falsum
+
+1. [F term4720]
+2. [[F term4720] => falsum]
+3. [[exists x [~ [F x]]] => falsum]
+ 
+> =>l
+=========================
+Step 27 [1]
+
+?- [F term4720]
+
+1. [F term4720]
+2. [[F term4720] => falsum]
+3. [[exists x [~ [F x]]] => falsum]
+ 
+> hyp
+proved
+

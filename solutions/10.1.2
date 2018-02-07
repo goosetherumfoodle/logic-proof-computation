@@ -1,0 +1,232 @@
+=========================
+Step 1 [1]
+
+?- [all x [[likes x peanuts] => [likes x beer]]]
+
+1. [all x [[~ [likes x beer]] => [~ [likes x guinness]]]]
+2. [all x [[likes x peanuts] => [likes x guinness]]]
+ 
+> allr
+=========================
+Step 2 [1]
+
+?- [[likes term3031 peanuts] => [likes term3031 beer]]
+
+1. [all x [[~ [likes x beer]] => [~ [likes x guinness]]]]
+2. [all x [[likes x peanuts] => [likes x guinness]]]
+ 
+> (alll term3031)
+=========================
+Step 3 [1]
+
+?- [[likes term3031 peanuts] => [likes term3031 beer]]
+
+1. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+2. [all x [[~ [likes x beer]] => [~ [likes x guinness]]]]
+3. [all x [[likes x peanuts] => [likes x guinness]]]
+ 
+> (thin 2)
+=========================
+Step 4 [1]
+
+?- [[likes term3031 peanuts] => [likes term3031 beer]]
+
+1. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+2. [all x [[likes x peanuts] => [likes x guinness]]]
+ 
+> (alll term3031)
+=========================
+Step 5 [1]
+
+?- [[likes term3031 peanuts] => [likes term3031 beer]]
+
+1. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+2. [[likes term3031 peanuts] => [likes term3031 guinness]]
+3. [all x [[likes x peanuts] => [likes x guinness]]]
+ 
+> (thin 3)
+=========================
+Step 6 [1]
+
+?- [[likes term3031 peanuts] => [likes term3031 beer]]
+
+1. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+2. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> =>r
+=========================
+Step 7 [1]
+
+?- [likes term3031 beer]
+
+1. [likes term3031 peanuts]
+2. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+3. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> (lemma [likes term3031 guinness])
+=========================
+Step 8 [2]
+
+?- [likes term3031 guinness]
+
+1. [likes term3031 peanuts]
+2. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+3. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> (swap 2 3)
+=========================
+Step 9 [2]
+
+?- [likes term3031 guinness]
+
+1. [likes term3031 peanuts]
+2. [[likes term3031 peanuts] => [likes term3031 guinness]]
+3. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+ 
+> =>l
+=========================
+Step 10 [2]
+
+?- [likes term3031 peanuts]
+
+1. [likes term3031 peanuts]
+2. [[likes term3031 peanuts] => [likes term3031 guinness]]
+3. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+ 
+> hyp
+=========================
+Step 11 [1]
+
+?- [likes term3031 beer]
+
+1. [likes term3031 guinness]
+2. [likes term3031 peanuts]
+3. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+4. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> (lemma [[likes term3031 beer] v [~ [likes term3031 beer]]])
+=========================
+Step 12 [2]
+
+?- [[likes term3031 beer] v [~ [likes term3031 beer]]]
+
+1. [likes term3031 guinness]
+2. [likes term3031 peanuts]
+3. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+4. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> lem
+=========================
+Step 13 [1]
+
+?- [likes term3031 beer]
+
+1. [[likes term3031 beer] v [~ [likes term3031 beer]]]
+2. [likes term3031 guinness]
+3. [likes term3031 peanuts]
+4. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+5. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> vl
+=========================
+Step 14 [2]
+
+?- [likes term3031 beer]
+
+1. [likes term3031 beer]
+2. [likes term3031 guinness]
+3. [likes term3031 peanuts]
+4. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+5. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> hyp
+=========================
+Step 15 [1]
+
+?- [likes term3031 beer]
+
+1. [~ [likes term3031 beer]]
+2. [likes term3031 guinness]
+3. [likes term3031 peanuts]
+4. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+5. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> (lemma [~ [likes term3031 guinness]])
+=========================
+Step 16 [2]
+
+?- [~ [likes term3031 guinness]]
+
+1. [~ [likes term3031 beer]]
+2. [likes term3031 guinness]
+3. [likes term3031 peanuts]
+4. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+5. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> =>l
+=========================
+Step 17 [2]
+
+?- [~ [likes term3031 beer]]
+
+1. [~ [likes term3031 beer]]
+2. [likes term3031 guinness]
+3. [likes term3031 peanuts]
+4. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+5. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> hyp
+=========================
+Step 18 [1]
+
+?- [likes term3031 beer]
+
+1. [~ [likes term3031 guinness]]
+2. [~ [likes term3031 beer]]
+3. [likes term3031 guinness]
+4. [likes term3031 peanuts]
+5. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+6. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> ~l
+=========================
+Step 19 [1]
+
+?- [likes term3031 beer]
+
+1. [[likes term3031 guinness] => falsum]
+2. [~ [likes term3031 beer]]
+3. [likes term3031 guinness]
+4. [likes term3031 peanuts]
+5. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+6. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> exp
+=========================
+Step 20 [1]
+
+?- falsum
+
+1. [[likes term3031 guinness] => falsum]
+2. [~ [likes term3031 beer]]
+3. [likes term3031 guinness]
+4. [likes term3031 peanuts]
+5. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+6. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> =>l
+=========================
+Step 21 [1]
+
+?- [likes term3031 guinness]
+
+1. [[likes term3031 guinness] => falsum]
+2. [~ [likes term3031 beer]]
+3. [likes term3031 guinness]
+4. [likes term3031 peanuts]
+5. [[~ [likes term3031 beer]] => [~ [likes term3031 guinness]]]
+6. [[likes term3031 peanuts] => [likes term3031 guinness]]
+ 
+> hyp
+proved
+

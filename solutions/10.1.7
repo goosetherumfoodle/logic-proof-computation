@@ -1,0 +1,234 @@
+=========================
+Step 1 [1]
+
+?- [all x [[man x] => [~ [god x]]]]
+
+1. [all x [[man x] => [~ [immortal x]]]]
+2. [all x [[god x] => [immortal x]]]
+ 
+> allr
+=========================
+Step 2 [1]
+
+?- [[man term3048] => [~ [god term3048]]]
+
+1. [all x [[man x] => [~ [immortal x]]]]
+2. [all x [[god x] => [immortal x]]]
+ 
+> (alll term3048)
+=========================
+Step 3 [1]
+
+?- [[man term3048] => [~ [god term3048]]]
+
+1. [[man term3048] => [~ [immortal term3048]]]
+2. [all x [[man x] => [~ [immortal x]]]]
+3. [all x [[god x] => [immortal x]]]
+ 
+> (thin 2)
+=========================
+Step 4 [1]
+
+?- [[man term3048] => [~ [god term3048]]]
+
+1. [[man term3048] => [~ [immortal term3048]]]
+2. [all x [[god x] => [immortal x]]]
+ 
+> (alll term3048)
+=========================
+Step 5 [1]
+
+?- [[man term3048] => [~ [god term3048]]]
+
+1. [[man term3048] => [~ [immortal term3048]]]
+2. [[god term3048] => [immortal term3048]]
+3. [all x [[god x] => [immortal x]]]
+ 
+> (thin 3)
+=========================
+Step 6 [1]
+
+?- [[man term3048] => [~ [god term3048]]]
+
+1. [[man term3048] => [~ [immortal term3048]]]
+2. [[god term3048] => [immortal term3048]]
+ 
+> =>r
+=========================
+Step 7 [1]
+
+?- [~ [god term3048]]
+
+1. [man term3048]
+2. [[man term3048] => [~ [immortal term3048]]]
+3. [[god term3048] => [immortal term3048]]
+ 
+> (lemma [~ [immortal term3048]])
+=========================
+Step 8 [2]
+
+?- [~ [immortal term3048]]
+
+1. [man term3048]
+2. [[man term3048] => [~ [immortal term3048]]]
+3. [[god term3048] => [immortal term3048]]
+ 
+> =>l
+=========================
+Step 9 [2]
+
+?- [man term3048]
+
+1. [man term3048]
+2. [[man term3048] => [~ [immortal term3048]]]
+3. [[god term3048] => [immortal term3048]]
+ 
+> hyp
+=========================
+Step 10 [1]
+
+?- [~ [god term3048]]
+
+1. [~ [immortal term3048]]
+2. [man term3048]
+3. [[man term3048] => [~ [immortal term3048]]]
+4. [[god term3048] => [immortal term3048]]
+ 
+> (lemma  [[god term3048] v [~ [god term3048]]])
+=========================
+Step 11 [2]
+
+?- [[god term3048] v [~ [god term3048]]]
+
+1. [~ [immortal term3048]]
+2. [man term3048]
+3. [[man term3048] => [~ [immortal term3048]]]
+4. [[god term3048] => [immortal term3048]]
+ 
+> lem
+=========================
+Step 12 [1]
+
+?- [~ [god term3048]]
+
+1. [[god term3048] v [~ [god term3048]]]
+2. [~ [immortal term3048]]
+3. [man term3048]
+4. [[man term3048] => [~ [immortal term3048]]]
+5. [[god term3048] => [immortal term3048]]
+ 
+> vl
+=========================
+Step 13 [2]
+
+?- [~ [god term3048]]
+
+1. [god term3048]
+2. [~ [immortal term3048]]
+3. [man term3048]
+4. [[man term3048] => [~ [immortal term3048]]]
+5. [[god term3048] => [immortal term3048]]
+ 
+> (swap 4 5)
+=========================
+Step 14 [2]
+
+?- [~ [god term3048]]
+
+1. [god term3048]
+2. [~ [immortal term3048]]
+3. [man term3048]
+4. [[god term3048] => [immortal term3048]]
+5. [[man term3048] => [~ [immortal term3048]]]
+ 
+> (lemma [immortal term3048])
+=========================
+Step 15 [3]
+
+?- [immortal term3048]
+
+1. [god term3048]
+2. [~ [immortal term3048]]
+3. [man term3048]
+4. [[god term3048] => [immortal term3048]]
+5. [[man term3048] => [~ [immortal term3048]]]
+ 
+> =>l
+=========================
+Step 16 [3]
+
+?- [god term3048]
+
+1. [god term3048]
+2. [~ [immortal term3048]]
+3. [man term3048]
+4. [[god term3048] => [immortal term3048]]
+5. [[man term3048] => [~ [immortal term3048]]]
+ 
+> hyp
+=========================
+Step 17 [2]
+
+?- [~ [god term3048]]
+
+1. [immortal term3048]
+2. [god term3048]
+3. [~ [immortal term3048]]
+4. [man term3048]
+5. [[god term3048] => [immortal term3048]]
+6. [[man term3048] => [~ [immortal term3048]]]
+ 
+> ~l
+=========================
+Step 18 [2]
+
+?- [~ [god term3048]]
+
+1. [immortal term3048]
+2. [god term3048]
+3. [[immortal term3048] => falsum]
+4. [man term3048]
+5. [[god term3048] => [immortal term3048]]
+6. [[man term3048] => [~ [immortal term3048]]]
+ 
+> exp
+=========================
+Step 19 [2]
+
+?- falsum
+
+1. [immortal term3048]
+2. [god term3048]
+3. [[immortal term3048] => falsum]
+4. [man term3048]
+5. [[god term3048] => [immortal term3048]]
+6. [[man term3048] => [~ [immortal term3048]]]
+ 
+> =>l
+=========================
+Step 20 [2]
+
+?- [immortal term3048]
+
+1. [immortal term3048]
+2. [god term3048]
+3. [[immortal term3048] => falsum]
+4. [man term3048]
+5. [[god term3048] => [immortal term3048]]
+6. [[man term3048] => [~ [immortal term3048]]]
+ 
+> hyp
+=========================
+Step 21 [1]
+
+?- [~ [god term3048]]
+
+1. [~ [god term3048]]
+2. [~ [immortal term3048]]
+3. [man term3048]
+4. [[man term3048] => [~ [immortal term3048]]]
+5. [[god term3048] => [immortal term3048]]
+ 
+> hyp
+proved
+

@@ -1,0 +1,58 @@
+=========================
+Step 1 [1]
+
+?- [[all x [exists y [larger x y]]] => [exists x [exists y [larger x y]]]]
+
+ 
+> =>r
+=========================
+Step 2 [1]
+
+?- [exists x [exists y [larger x y]]]
+
+1. [all x [exists y [larger x y]]]
+ 
+> (alll a)
+=========================
+Step 3 [1]
+
+?- [exists x [exists y [larger x y]]]
+
+1. [exists y [larger a y]]
+2. [all x [exists y [larger x y]]]
+ 
+> (thin 2)
+=========================
+Step 4 [1]
+
+?- [exists x [exists y [larger x y]]]
+
+1. [exists y [larger a y]]
+ 
+> existsl
+=========================
+Step 5 [1]
+
+?- [exists x [exists y [larger x y]]]
+
+1. [larger a term3043]
+ 
+> (existsr a)
+=========================
+Step 6 [1]
+
+?- [exists y [larger a y]]
+
+1. [larger a term3043]
+ 
+> (existsr term3043)
+=========================
+Step 7 [1]
+
+?- [larger a term3043]
+
+1. [larger a term3043]
+ 
+> hyp
+proved
+

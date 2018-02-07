@@ -1,0 +1,68 @@
+=========================
+Step 1 [1]
+
+?- [[exists x [tall x]] & [exists y [tall y]]]
+
+1. [exists z [[tall z] & [heavy z]]]
+ 
+> existsl
+=========================
+Step 2 [1]
+
+?- [[exists x [tall x]] & [exists y [tall y]]]
+
+1. [[tall term3036] & [heavy term3036]]
+ 
+> &r
+=========================
+Step 3 [2]
+
+?- [exists x [tall x]]
+
+1. [[tall term3036] & [heavy term3036]]
+ 
+> (existsr term3036)
+=========================
+Step 4 [2]
+
+?- [tall term3036]
+
+1. [[tall term3036] & [heavy term3036]]
+ 
+> &l
+=========================
+Step 5 [2]
+
+?- [tall term3036]
+
+1. [tall term3036]
+2. [heavy term3036]
+ 
+> hyp
+=========================
+Step 6 [1]
+
+?- [exists y [tall y]]
+
+1. [[tall term3036] & [heavy term3036]]
+ 
+> (existsr term3036)
+=========================
+Step 7 [1]
+
+?- [tall term3036]
+
+1. [[tall term3036] & [heavy term3036]]
+ 
+> &l
+=========================
+Step 8 [1]
+
+?- [tall term3036]
+
+1. [tall term3036]
+2. [heavy term3036]
+ 
+> hyp
+proved
+

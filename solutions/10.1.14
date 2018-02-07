@@ -1,0 +1,31 @@
+=========================
+Step 1 [1]
+
+?- [exists y [exists x [[furry x] => [furry y]]]]
+
+ 
+> (existsr a)
+=========================
+Step 2 [1]
+
+?- [exists x [[furry x] => [furry a]]]
+
+ 
+> (existsr a)
+=========================
+Step 3 [1]
+
+?- [[furry a] => [furry a]]
+
+ 
+> =>r
+=========================
+Step 4 [1]
+
+?- [furry a]
+
+1. [furry a]
+ 
+> hyp
+proved
+

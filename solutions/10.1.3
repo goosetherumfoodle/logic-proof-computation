@@ -1,0 +1,238 @@
+=========================
+Step 1 [1]
+
+?- [A tom trisha]
+
+1. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+2. [P tom sally]
+3. [P sally trisha]
+ 
+> (alll tom)
+=========================
+Step 2 [1]
+
+?- [A tom trisha]
+
+1. [all y [[A tom y] <=> [[P tom y] v [exists z [[A z y] & [P tom z]]]]]]
+2. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+3. [P tom sally]
+4. [P sally trisha]
+ 
+> (alll trisha)
+=========================
+Step 3 [1]
+
+?- [A tom trisha]
+
+1. [[A tom trisha] <=> [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [all y [[A tom y] <=> [[P tom y] v [exists z [[A z y] & [P tom z]]]]]]
+3. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+4. [P tom sally]
+5. [P sally trisha]
+ 
+> (thin 2)
+=========================
+Step 4 [1]
+
+?- [A tom trisha]
+
+1. [[A tom trisha] <=> [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+3. [P tom sally]
+4. [P sally trisha]
+ 
+> <=>l
+=========================
+Step 5 [1]
+
+?- [A tom trisha]
+
+1. [[[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]] & [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]]
+2. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+3. [P tom sally]
+4. [P sally trisha]
+ 
+> &l
+=========================
+Step 6 [1]
+
+?- [A tom trisha]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+4. [P tom sally]
+5. [P sally trisha]
+ 
+> =>l
+=========================
+Step 7 [1]
+
+?- [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+4. [P tom sally]
+5. [P sally trisha]
+ 
+> vr2
+=========================
+Step 8 [1]
+
+?- [exists z [[A z trisha] & [P tom z]]]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+4. [P tom sally]
+5. [P sally trisha]
+ 
+> (existsr sally)
+=========================
+Step 9 [1]
+
+?- [[A sally trisha] & [P tom sally]]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+4. [P tom sally]
+5. [P sally trisha]
+ 
+> &r
+=========================
+Step 10 [2]
+
+?- [A sally trisha]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+4. [P tom sally]
+5. [P sally trisha]
+ 
+> (alll sally)
+=========================
+Step 11 [2]
+
+?- [A sally trisha]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [all y [[A sally y] <=> [[P sally y] v [exists z [[A z y] & [P sally z]]]]]]
+4. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+5. [P tom sally]
+6. [P sally trisha]
+ 
+> (alll trisha)
+=========================
+Step 12 [2]
+
+?- [A sally trisha]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [[A sally trisha] <=> [[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]]]
+4. [all y [[A sally y] <=> [[P sally y] v [exists z [[A z y] & [P sally z]]]]]]
+5. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+6. [P tom sally]
+7. [P sally trisha]
+ 
+> (thin 4)
+=========================
+Step 13 [2]
+
+?- [A sally trisha]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [[A sally trisha] <=> [[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]]]
+4. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+5. [P tom sally]
+6. [P sally trisha]
+ 
+> <=>l
+=========================
+Step 14 [2]
+
+?- [A sally trisha]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [[[A sally trisha] => [[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]]] & [[[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]] => [A sally trisha]]]
+4. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+5. [P tom sally]
+6. [P sally trisha]
+ 
+> &l
+=========================
+Step 15 [2]
+
+?- [A sally trisha]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [[A sally trisha] => [[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]]]
+4. [[[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]] => [A sally trisha]]
+5. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+6. [P tom sally]
+7. [P sally trisha]
+ 
+> (swap 1 4)
+=========================
+Step 16 [2]
+
+?- [A sally trisha]
+
+1. [[[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]] => [A sally trisha]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [[A sally trisha] => [[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]]]
+4. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+5. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+6. [P tom sally]
+7. [P sally trisha]
+ 
+> =>l
+=========================
+Step 17 [2]
+
+?- [[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]]
+
+1. [[[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]] => [A sally trisha]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [[A sally trisha] => [[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]]]
+4. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+5. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+6. [P tom sally]
+7. [P sally trisha]
+ 
+> vr1
+=========================
+Step 18 [2]
+
+?- [P sally trisha]
+
+1. [[[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]] => [A sally trisha]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [[A sally trisha] => [[P sally trisha] v [exists z [[A z trisha] & [P sally z]]]]]
+4. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+5. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+6. [P tom sally]
+7. [P sally trisha]
+ 
+> hyp
+=========================
+Step 19 [1]
+
+?- [P tom sally]
+
+1. [[A tom trisha] => [[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]]]
+2. [[[P tom trisha] v [exists z [[A z trisha] & [P tom z]]]] => [A tom trisha]]
+3. [all x [all y [[A x y] <=> [[P x y] v [exists z [[A z y] & [P x z]]]]]]]
+4. [P tom sally]
+5. [P sally trisha]
+ 
+> hyp
+proved
+

@@ -1,0 +1,157 @@
+=========================
+Step 1 [1]
+
+?- [all x [~ [N x]]]
+
+1. [all x [[[M x] v [N x]] => [F x]]]
+2. [all x [~ [F x]]]
+ 
+> allr
+=========================
+Step 2 [1]
+
+?- [~ [N term3037]]
+
+1. [all x [[[M x] v [N x]] => [F x]]]
+2. [all x [~ [F x]]]
+ 
+> ~r
+=========================
+Step 3 [1]
+
+?- [[N term3037] => falsum]
+
+1. [all x [[[M x] v [N x]] => [F x]]]
+2. [all x [~ [F x]]]
+ 
+> =>r
+=========================
+Step 4 [1]
+
+?- falsum
+
+1. [N term3037]
+2. [all x [[[M x] v [N x]] => [F x]]]
+3. [all x [~ [F x]]]
+ 
+> (alll term3037)
+=========================
+Step 5 [1]
+
+?- falsum
+
+1. [N term3037]
+2. [[[M term3037] v [N term3037]] => [F term3037]]
+3. [all x [[[M x] v [N x]] => [F x]]]
+4. [all x [~ [F x]]]
+ 
+> (thin 3)
+=========================
+Step 6 [1]
+
+?- falsum
+
+1. [N term3037]
+2. [[[M term3037] v [N term3037]] => [F term3037]]
+3. [all x [~ [F x]]]
+ 
+> (lemma [F term3037])
+=========================
+Step 7 [2]
+
+?- [F term3037]
+
+1. [N term3037]
+2. [[[M term3037] v [N term3037]] => [F term3037]]
+3. [all x [~ [F x]]]
+ 
+> =>l
+=========================
+Step 8 [2]
+
+?- [[M term3037] v [N term3037]]
+
+1. [N term3037]
+2. [[[M term3037] v [N term3037]] => [F term3037]]
+3. [all x [~ [F x]]]
+ 
+> vr2
+=========================
+Step 9 [2]
+
+?- [N term3037]
+
+1. [N term3037]
+2. [[[M term3037] v [N term3037]] => [F term3037]]
+3. [all x [~ [F x]]]
+ 
+> hyp
+=========================
+Step 10 [1]
+
+?- falsum
+
+1. [F term3037]
+2. [N term3037]
+3. [[[M term3037] v [N term3037]] => [F term3037]]
+4. [all x [~ [F x]]]
+ 
+> (alll term3037)
+=========================
+Step 11 [1]
+
+?- falsum
+
+1. [F term3037]
+2. [N term3037]
+3. [[[M term3037] v [N term3037]] => [F term3037]]
+4. [~ [F term3037]]
+5. [all x [~ [F x]]]
+ 
+> (thin 5)
+=========================
+Step 12 [1]
+
+?- falsum
+
+1. [F term3037]
+2. [N term3037]
+3. [[[M term3037] v [N term3037]] => [F term3037]]
+4. [~ [F term3037]]
+ 
+> ~l
+=========================
+Step 13 [1]
+
+?- falsum
+
+1. [F term3037]
+2. [N term3037]
+3. [[[M term3037] v [N term3037]] => [F term3037]]
+4. [[F term3037] => falsum]
+ 
+> (swap 4 1)
+=========================
+Step 14 [1]
+
+?- falsum
+
+1. [[F term3037] => falsum]
+2. [N term3037]
+3. [[[M term3037] v [N term3037]] => [F term3037]]
+4. [F term3037]
+ 
+> =>l
+=========================
+Step 15 [1]
+
+?- [F term3037]
+
+1. [[F term3037] => falsum]
+2. [N term3037]
+3. [[[M term3037] v [N term3037]] => [F term3037]]
+4. [F term3037]
+ 
+> hyp
+proved
+

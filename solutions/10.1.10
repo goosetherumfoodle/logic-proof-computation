@@ -1,0 +1,139 @@
+=========================
+Step 1 [1]
+
+?- [exists x [~ [N x]]]
+
+1. [all x [[[N x] v [M x]] => [F x]]]
+2. [exists x [~ [F x]]]
+ 
+> existsl
+=========================
+Step 2 [1]
+
+?- [exists x [~ [N x]]]
+
+1. [all x [[[N x] v [M x]] => [F x]]]
+2. [~ [F term3044]]
+ 
+> (alll term3044)
+=========================
+Step 3 [1]
+
+?- [exists x [~ [N x]]]
+
+1. [[[N term3044] v [M term3044]] => [F term3044]]
+2. [all x [[[N x] v [M x]] => [F x]]]
+3. [~ [F term3044]]
+ 
+> (thin 2)
+=========================
+Step 4 [1]
+
+?- [exists x [~ [N x]]]
+
+1. [[[N term3044] v [M term3044]] => [F term3044]]
+2. [~ [F term3044]]
+ 
+> (existsr term3044)
+=========================
+Step 5 [1]
+
+?- [~ [N term3044]]
+
+1. [[[N term3044] v [M term3044]] => [F term3044]]
+2. [~ [F term3044]]
+ 
+> ~r
+=========================
+Step 6 [1]
+
+?- [[N term3044] => falsum]
+
+1. [[[N term3044] v [M term3044]] => [F term3044]]
+2. [~ [F term3044]]
+ 
+> ~l
+=========================
+Step 7 [1]
+
+?- [[N term3044] => falsum]
+
+1. [[[N term3044] v [M term3044]] => [F term3044]]
+2. [[F term3044] => falsum]
+ 
+> =>r
+=========================
+Step 8 [1]
+
+?- falsum
+
+1. [N term3044]
+2. [[[N term3044] v [M term3044]] => [F term3044]]
+3. [[F term3044] => falsum]
+ 
+> (lemma [F term3044])
+=========================
+Step 9 [2]
+
+?- [F term3044]
+
+1. [N term3044]
+2. [[[N term3044] v [M term3044]] => [F term3044]]
+3. [[F term3044] => falsum]
+ 
+> =>l
+=========================
+Step 10 [2]
+
+?- [[N term3044] v [M term3044]]
+
+1. [N term3044]
+2. [[[N term3044] v [M term3044]] => [F term3044]]
+3. [[F term3044] => falsum]
+ 
+> vr1
+=========================
+Step 11 [2]
+
+?- [N term3044]
+
+1. [N term3044]
+2. [[[N term3044] v [M term3044]] => [F term3044]]
+3. [[F term3044] => falsum]
+ 
+> hyp
+=========================
+Step 12 [1]
+
+?- falsum
+
+1. [F term3044]
+2. [N term3044]
+3. [[[N term3044] v [M term3044]] => [F term3044]]
+4. [[F term3044] => falsum]
+ 
+> (swap 3 4)
+=========================
+Step 13 [1]
+
+?- falsum
+
+1. [F term3044]
+2. [N term3044]
+3. [[F term3044] => falsum]
+4. [[[N term3044] v [M term3044]] => [F term3044]]
+ 
+> =>l
+=========================
+Step 14 [1]
+
+?- [F term3044]
+
+1. [F term3044]
+2. [N term3044]
+3. [[F term3044] => falsum]
+4. [[[N term3044] v [M term3044]] => [F term3044]]
+ 
+> hyp
+proved
+

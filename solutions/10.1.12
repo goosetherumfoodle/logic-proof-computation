@@ -1,0 +1,63 @@
+=========================
+Step 1 [1]
+
+?- [all x [all z [exists y [F x y z]]]]
+
+1. [all x [exists y [all z [F x y z]]]]
+ 
+> allr
+=========================
+Step 2 [1]
+
+?- [all z [exists y [F term3063 y z]]]
+
+1. [all x [exists y [all z [F x y z]]]]
+ 
+> allr
+=========================
+Step 3 [1]
+
+?- [exists y [F term3063 y term3064]]
+
+1. [all x [exists y [all z [F x y z]]]]
+ 
+> (alll term3063)
+=========================
+Step 4 [1]
+
+?- [exists y [F term3063 y term3064]]
+
+1. [exists y [all z [F term3063 y z]]]
+2. [all x [exists y [all z [F x y z]]]]
+ 
+> existsl
+=========================
+Step 5 [1]
+
+?- [exists y [F term3063 y term3064]]
+
+1. [all z [F term3063 term3065 z]]
+2. [all x [exists y [all z [F x y z]]]]
+ 
+> (existsr term3065)
+=========================
+Step 6 [1]
+
+?- [F term3063 term3065 term3064]
+
+1. [all z [F term3063 term3065 z]]
+2. [all x [exists y [all z [F x y z]]]]
+ 
+> (alll term3064)
+=========================
+Step 7 [1]
+
+?- [F term3063 term3065 term3064]
+
+1. [F term3063 term3065 term3064]
+2. [all z [F term3063 term3065 z]]
+3. [all x [exists y [all z [F x y z]]]]
+ 
+> hyp
+proved
+

@@ -1,0 +1,64 @@
+=========================
+Step 1 [1]
+
+?- [all z [all y [all x [F x y z]]]]
+
+1. [all x [all y [all z [F x y z]]]]
+ 
+> allr
+=========================
+Step 2 [1]
+
+?- [all y [all x [F x y term3050]]]
+
+1. [all x [all y [all z [F x y z]]]]
+ 
+> allr
+=========================
+Step 3 [1]
+
+?- [all x [F x term3051 term3050]]
+
+1. [all x [all y [all z [F x y z]]]]
+ 
+> allr
+=========================
+Step 4 [1]
+
+?- [F term3052 term3051 term3050]
+
+1. [all x [all y [all z [F x y z]]]]
+ 
+> (alll term3052)
+=========================
+Step 5 [1]
+
+?- [F term3052 term3051 term3050]
+
+1. [all y [all z [F term3052 y z]]]
+2. [all x [all y [all z [F x y z]]]]
+ 
+> (alll term3051)
+=========================
+Step 6 [1]
+
+?- [F term3052 term3051 term3050]
+
+1. [all z [F term3052 term3051 z]]
+2. [all y [all z [F term3052 y z]]]
+3. [all x [all y [all z [F x y z]]]]
+ 
+> (alll term3050)
+=========================
+Step 7 [1]
+
+?- [F term3052 term3051 term3050]
+
+1. [F term3052 term3051 term3050]
+2. [all z [F term3052 term3051 z]]
+3. [all y [all z [F term3052 y z]]]
+4. [all x [all y [all z [F x y z]]]]
+ 
+> hyp
+proved
+

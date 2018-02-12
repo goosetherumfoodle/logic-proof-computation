@@ -1,0 +1,164 @@
+=========================
+Step 1 [1]
+
+?- [=s e! [inter a e!]]
+
+ 
+> =sr
+=========================
+Step 2 [1]
+
+?- [[subset e! [inter a e!]] & [subset [inter a e!] e!]]
+
+ 
+> &r
+=========================
+Step 3 [2]
+
+?- [subset e! [inter a e!]]
+
+ 
+> subsetr
+=========================
+Step 4 [2]
+
+?- [all x [[member x e!] => [member x [inter a e!]]]]
+
+ 
+> allr
+=========================
+Step 5 [2]
+
+?- [[member term3490 e!] => [member term3490 [inter a e!]]]
+
+ 
+> =>r
+=========================
+Step 6 [2]
+
+?- [member term3490 [inter a e!]]
+
+1. [member term3490 e!]
+ 
+> interr
+=========================
+Step 7 [2]
+
+?- [[member term3490 a] & [member term3490 e!]]
+
+1. [member term3490 e!]
+ 
+> &r
+=========================
+Step 8 [3]
+
+?- [member term3490 a]
+
+1. [member term3490 e!]
+ 
+> defe!
+=========================
+Step 9 [3]
+
+?- [member term3490 a]
+
+1. [all x [~ [member x e!]]]
+2. [member term3490 e!]
+ 
+> (alll term3490)
+=========================
+Step 10 [3]
+
+?- [member term3490 a]
+
+1. [~ [member term3490 e!]]
+2. [all x [~ [member x e!]]]
+3. [member term3490 e!]
+ 
+> ~l
+=========================
+Step 11 [3]
+
+?- [member term3490 a]
+
+1. [[member term3490 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3490 e!]
+ 
+> exp
+=========================
+Step 12 [3]
+
+?- falsum
+
+1. [[member term3490 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3490 e!]
+ 
+> =>l
+=========================
+Step 13 [3]
+
+?- [member term3490 e!]
+
+1. [[member term3490 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3490 e!]
+ 
+> hyp
+=========================
+Step 14 [2]
+
+?- [member term3490 e!]
+
+1. [member term3490 e!]
+ 
+> hyp
+=========================
+Step 15 [1]
+
+?- [subset [inter a e!] e!]
+
+ 
+> subsetr
+=========================
+Step 16 [1]
+
+?- [all x [[member x [inter a e!]] => [member x e!]]]
+
+ 
+> allr
+=========================
+Step 17 [1]
+
+?- [[member term3491 [inter a e!]] => [member term3491 e!]]
+
+ 
+> =>r
+=========================
+Step 18 [1]
+
+?- [member term3491 e!]
+
+1. [member term3491 [inter a e!]]
+ 
+> interl
+=========================
+Step 19 [1]
+
+?- [member term3491 e!]
+
+1. [[member term3491 a] & [member term3491 e!]]
+ 
+> &l
+=========================
+Step 20 [1]
+
+?- [member term3491 e!]
+
+1. [member term3491 a]
+2. [member term3491 e!]
+ 
+> hyp
+proved
+

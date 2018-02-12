@@ -1,5 +1,6 @@
 (tc +)
 (load "provedit!.shen")
+(load "afst.shen")
 (provedit!)
 
 \* 6.2.2 [[[p v q] => [p v r]] => [p v [q => r]]] *\

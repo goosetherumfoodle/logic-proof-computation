@@ -1,0 +1,161 @@
+=========================
+Step 1 [1]
+
+?- [=s v! [comp e!]]
+
+ 
+> =sr
+=========================
+Step 2 [1]
+
+?- [[subset v! [comp e!]] & [subset [comp e!] v!]]
+
+ 
+> &r
+=========================
+Step 3 [2]
+
+?- [subset v! [comp e!]]
+
+ 
+> subsetr
+=========================
+Step 4 [2]
+
+?- [all x [[member x v!] => [member x [comp e!]]]]
+
+ 
+> allr
+=========================
+Step 5 [2]
+
+?- [[member term3499 v!] => [member term3499 [comp e!]]]
+
+ 
+> =>r
+=========================
+Step 6 [2]
+
+?- [member term3499 [comp e!]]
+
+1. [member term3499 v!]
+ 
+> compr
+=========================
+Step 7 [2]
+
+?- [~ [member term3499 e!]]
+
+1. [member term3499 v!]
+ 
+> ~r
+=========================
+Step 8 [2]
+
+?- [[member term3499 e!] => falsum]
+
+1. [member term3499 v!]
+ 
+> =>r
+=========================
+Step 9 [2]
+
+?- falsum
+
+1. [member term3499 e!]
+2. [member term3499 v!]
+ 
+> defe!
+=========================
+Step 10 [2]
+
+?- falsum
+
+1. [all x [~ [member x e!]]]
+2. [member term3499 e!]
+3. [member term3499 v!]
+ 
+> (alll term3499)
+=========================
+Step 11 [2]
+
+?- falsum
+
+1. [~ [member term3499 e!]]
+2. [all x [~ [member x e!]]]
+3. [member term3499 e!]
+4. [member term3499 v!]
+ 
+> ~l
+=========================
+Step 12 [2]
+
+?- falsum
+
+1. [[member term3499 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3499 e!]
+4. [member term3499 v!]
+ 
+> =>l
+=========================
+Step 13 [2]
+
+?- [member term3499 e!]
+
+1. [[member term3499 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3499 e!]
+4. [member term3499 v!]
+ 
+> hyp
+=========================
+Step 14 [1]
+
+?- [subset [comp e!] v!]
+
+ 
+> subsetr
+=========================
+Step 15 [1]
+
+?- [all x [[member x [comp e!]] => [member x v!]]]
+
+ 
+> allr
+=========================
+Step 16 [1]
+
+?- [[member term3500 [comp e!]] => [member term3500 v!]]
+
+ 
+> =>r
+=========================
+Step 17 [1]
+
+?- [member term3500 v!]
+
+1. [member term3500 [comp e!]]
+ 
+> defv!
+=========================
+Step 18 [1]
+
+?- [member term3500 v!]
+
+1. [all x [member x v!]]
+2. [member term3500 [comp e!]]
+ 
+> (alll term3500)
+=========================
+Step 19 [1]
+
+?- [member term3500 v!]
+
+1. [member term3500 v!]
+2. [all x [member x v!]]
+3. [member term3500 [comp e!]]
+ 
+> hyp
+proved
+

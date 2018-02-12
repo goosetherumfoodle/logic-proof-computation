@@ -1,0 +1,134 @@
+=========================
+Step 1 [1]
+
+?- [=s a [inter a v!]]
+
+ 
+> =sr
+=========================
+Step 2 [1]
+
+?- [[subset a [inter a v!]] & [subset [inter a v!] a]]
+
+ 
+> &r
+=========================
+Step 3 [2]
+
+?- [subset a [inter a v!]]
+
+ 
+> subsetr
+=========================
+Step 4 [2]
+
+?- [all x [[member x a] => [member x [inter a v!]]]]
+
+ 
+> allr
+=========================
+Step 5 [2]
+
+?- [[member term3496 a] => [member term3496 [inter a v!]]]
+
+ 
+> =>r
+=========================
+Step 6 [2]
+
+?- [member term3496 [inter a v!]]
+
+1. [member term3496 a]
+ 
+> interr
+=========================
+Step 7 [2]
+
+?- [[member term3496 a] & [member term3496 v!]]
+
+1. [member term3496 a]
+ 
+> &r
+=========================
+Step 8 [3]
+
+?- [member term3496 a]
+
+1. [member term3496 a]
+ 
+> hyp
+=========================
+Step 9 [2]
+
+?- [member term3496 v!]
+
+1. [member term3496 a]
+ 
+> defv!
+=========================
+Step 10 [2]
+
+?- [member term3496 v!]
+
+1. [all x [member x v!]]
+2. [member term3496 a]
+ 
+> (alll term3496)
+=========================
+Step 11 [2]
+
+?- [member term3496 v!]
+
+1. [member term3496 v!]
+2. [all x [member x v!]]
+3. [member term3496 a]
+ 
+> hyp
+=========================
+Step 12 [1]
+
+?- [subset [inter a v!] a]
+
+ 
+> subsetr
+=========================
+Step 13 [1]
+
+?- [all x [[member x [inter a v!]] => [member x a]]]
+
+ 
+> allr
+=========================
+Step 14 [1]
+
+?- [[member term3497 [inter a v!]] => [member term3497 a]]
+
+ 
+> =>r
+=========================
+Step 15 [1]
+
+?- [member term3497 a]
+
+1. [member term3497 [inter a v!]]
+ 
+> interl
+=========================
+Step 16 [1]
+
+?- [member term3497 a]
+
+1. [[member term3497 a] & [member term3497 v!]]
+ 
+> &l
+=========================
+Step 17 [1]
+
+?- [member term3497 a]
+
+1. [member term3497 a]
+2. [member term3497 v!]
+ 
+> hyp
+proved
+

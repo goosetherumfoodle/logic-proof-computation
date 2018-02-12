@@ -1,0 +1,314 @@
+=========================
+Step 1 [1]
+
+?- [=s [union a [union b c]] [union [union a b] c]]
+
+ 
+> =sr
+=========================
+Step 2 [1]
+
+?- [[subset [union a [union b c]] [union [union a b] c]] & [subset [union [union a b] c] [union a [union b c]]]]
+
+ 
+> &r
+=========================
+Step 3 [2]
+
+?- [subset [union a [union b c]] [union [union a b] c]]
+
+ 
+> subsetr
+=========================
+Step 4 [2]
+
+?- [all x [[member x [union a [union b c]]] => [member x [union [union a b] c]]]]
+
+ 
+> allr
+=========================
+Step 5 [2]
+
+?- [[member term3480 [union a [union b c]]] => [member term3480 [union [union a b] c]]]
+
+ 
+> =>r
+=========================
+Step 6 [2]
+
+?- [member term3480 [union [union a b] c]]
+
+1. [member term3480 [union a [union b c]]]
+ 
+> unionl
+=========================
+Step 7 [2]
+
+?- [member term3480 [union [union a b] c]]
+
+1. [[member term3480 a] v [member term3480 [union b c]]]
+ 
+> unionr
+=========================
+Step 8 [2]
+
+?- [[member term3480 [union a b]] v [member term3480 c]]
+
+1. [[member term3480 a] v [member term3480 [union b c]]]
+ 
+> vl
+=========================
+Step 9 [3]
+
+?- [[member term3480 [union a b]] v [member term3480 c]]
+
+1. [member term3480 a]
+ 
+> vr1
+=========================
+Step 10 [3]
+
+?- [member term3480 [union a b]]
+
+1. [member term3480 a]
+ 
+> unionr
+=========================
+Step 11 [3]
+
+?- [[member term3480 a] v [member term3480 b]]
+
+1. [member term3480 a]
+ 
+> vr1
+=========================
+Step 12 [3]
+
+?- [member term3480 a]
+
+1. [member term3480 a]
+ 
+> hyp
+=========================
+Step 13 [2]
+
+?- [[member term3480 [union a b]] v [member term3480 c]]
+
+1. [member term3480 [union b c]]
+ 
+> unionl
+=========================
+Step 14 [2]
+
+?- [[member term3480 [union a b]] v [member term3480 c]]
+
+1. [[member term3480 b] v [member term3480 c]]
+ 
+> vl
+=========================
+Step 15 [3]
+
+?- [[member term3480 [union a b]] v [member term3480 c]]
+
+1. [member term3480 b]
+ 
+> vr1
+=========================
+Step 16 [3]
+
+?- [member term3480 [union a b]]
+
+1. [member term3480 b]
+ 
+> unionr
+=========================
+Step 17 [3]
+
+?- [[member term3480 a] v [member term3480 b]]
+
+1. [member term3480 b]
+ 
+> vr2
+=========================
+Step 18 [3]
+
+?- [member term3480 b]
+
+1. [member term3480 b]
+ 
+> hyp
+=========================
+Step 19 [2]
+
+?- [[member term3480 [union a b]] v [member term3480 c]]
+
+1. [member term3480 c]
+ 
+> vr2
+=========================
+Step 20 [2]
+
+?- [member term3480 c]
+
+1. [member term3480 c]
+ 
+> hyp
+=========================
+Step 21 [1]
+
+?- [subset [union [union a b] c] [union a [union b c]]]
+
+ 
+> subsetr
+=========================
+Step 22 [1]
+
+?- [all x [[member x [union [union a b] c]] => [member x [union a [union b c]]]]]
+
+ 
+> allr
+=========================
+Step 23 [1]
+
+?- [[member term3481 [union [union a b] c]] => [member term3481 [union a [union b c]]]]
+
+ 
+> =>r
+=========================
+Step 24 [1]
+
+?- [member term3481 [union a [union b c]]]
+
+1. [member term3481 [union [union a b] c]]
+ 
+> unionl
+=========================
+Step 25 [1]
+
+?- [member term3481 [union a [union b c]]]
+
+1. [[member term3481 [union a b]] v [member term3481 c]]
+ 
+> vl
+=========================
+Step 26 [2]
+
+?- [member term3481 [union a [union b c]]]
+
+1. [member term3481 [union a b]]
+ 
+> unionl
+=========================
+Step 27 [2]
+
+?- [member term3481 [union a [union b c]]]
+
+1. [[member term3481 a] v [member term3481 b]]
+ 
+> vl
+=========================
+Step 28 [3]
+
+?- [member term3481 [union a [union b c]]]
+
+1. [member term3481 a]
+ 
+> unionr
+=========================
+Step 29 [3]
+
+?- [[member term3481 a] v [member term3481 [union b c]]]
+
+1. [member term3481 a]
+ 
+> vr1
+=========================
+Step 30 [3]
+
+?- [member term3481 a]
+
+1. [member term3481 a]
+ 
+> hyp
+=========================
+Step 31 [2]
+
+?- [member term3481 [union a [union b c]]]
+
+1. [member term3481 b]
+ 
+> unionr
+=========================
+Step 32 [2]
+
+?- [[member term3481 a] v [member term3481 [union b c]]]
+
+1. [member term3481 b]
+ 
+> vr2
+=========================
+Step 33 [2]
+
+?- [member term3481 [union b c]]
+
+1. [member term3481 b]
+ 
+> unionr
+=========================
+Step 34 [2]
+
+?- [[member term3481 b] v [member term3481 c]]
+
+1. [member term3481 b]
+ 
+> vr1
+=========================
+Step 35 [2]
+
+?- [member term3481 b]
+
+1. [member term3481 b]
+ 
+> hyp
+=========================
+Step 36 [1]
+
+?- [member term3481 [union a [union b c]]]
+
+1. [member term3481 c]
+ 
+> unionr
+=========================
+Step 37 [1]
+
+?- [[member term3481 a] v [member term3481 [union b c]]]
+
+1. [member term3481 c]
+ 
+> vr2
+=========================
+Step 38 [1]
+
+?- [member term3481 [union b c]]
+
+1. [member term3481 c]
+ 
+> unionr
+=========================
+Step 39 [1]
+
+?- [[member term3481 b] v [member term3481 c]]
+
+1. [member term3481 c]
+ 
+> vr2
+=========================
+Step 40 [1]
+
+?- [member term3481 c]
+
+1. [member term3481 c]
+ 
+> hyp
+proved
+

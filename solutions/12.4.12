@@ -1,0 +1,389 @@
+=========================
+Step 1 [1]
+
+?- [=s [comp [union a b]] [inter [comp a] [comp b]]]
+
+ 
+> =sr
+=========================
+Step 2 [1]
+
+?- [[subset [comp [union a b]] [inter [comp a] [comp b]]] & [subset [inter [comp a] [comp b]] [comp [union a b]]]]
+
+ 
+> &r
+=========================
+Step 3 [2]
+
+?- [subset [comp [union a b]] [inter [comp a] [comp b]]]
+
+ 
+> subsetr
+=========================
+Step 4 [2]
+
+?- [all x [[member x [comp [union a b]]] => [member x [inter [comp a] [comp b]]]]]
+
+ 
+> allr
+=========================
+Step 5 [2]
+
+?- [[member term3514 [comp [union a b]]] => [member term3514 [inter [comp a] [comp b]]]]
+
+ 
+> =>r
+=========================
+Step 6 [2]
+
+?- [member term3514 [inter [comp a] [comp b]]]
+
+1. [member term3514 [comp [union a b]]]
+ 
+> interr
+=========================
+Step 7 [2]
+
+?- [[member term3514 [comp a]] & [member term3514 [comp b]]]
+
+1. [member term3514 [comp [union a b]]]
+ 
+> &r
+=========================
+Step 8 [3]
+
+?- [member term3514 [comp a]]
+
+1. [member term3514 [comp [union a b]]]
+ 
+> compl
+=========================
+Step 9 [3]
+
+?- [member term3514 [comp a]]
+
+1. [~ [member term3514 [union a b]]]
+ 
+> ~l
+=========================
+Step 10 [3]
+
+?- [member term3514 [comp a]]
+
+1. [[member term3514 [union a b]] => falsum]
+ 
+> compr
+=========================
+Step 11 [3]
+
+?- [~ [member term3514 a]]
+
+1. [[member term3514 [union a b]] => falsum]
+ 
+> ~r
+=========================
+Step 12 [3]
+
+?- [[member term3514 a] => falsum]
+
+1. [[member term3514 [union a b]] => falsum]
+ 
+> =>r
+=========================
+Step 13 [3]
+
+?- falsum
+
+1. [member term3514 a]
+2. [[member term3514 [union a b]] => falsum]
+ 
+> =>l
+=========================
+Step 14 [3]
+
+?- [member term3514 [union a b]]
+
+1. [member term3514 a]
+2. [[member term3514 [union a b]] => falsum]
+ 
+> unionr
+=========================
+Step 15 [3]
+
+?- [[member term3514 a] v [member term3514 b]]
+
+1. [member term3514 a]
+2. [[member term3514 [union a b]] => falsum]
+ 
+> vr1
+=========================
+Step 16 [3]
+
+?- [member term3514 a]
+
+1. [member term3514 a]
+2. [[member term3514 [union a b]] => falsum]
+ 
+> hyp
+=========================
+Step 17 [2]
+
+?- [member term3514 [comp b]]
+
+1. [member term3514 [comp [union a b]]]
+ 
+> compr
+=========================
+Step 18 [2]
+
+?- [~ [member term3514 b]]
+
+1. [member term3514 [comp [union a b]]]
+ 
+> ~r
+=========================
+Step 19 [2]
+
+?- [[member term3514 b] => falsum]
+
+1. [member term3514 [comp [union a b]]]
+ 
+> =>r
+=========================
+Step 20 [2]
+
+?- falsum
+
+1. [member term3514 b]
+2. [member term3514 [comp [union a b]]]
+ 
+> compl
+=========================
+Step 21 [2]
+
+?- falsum
+
+1. [member term3514 b]
+2. [~ [member term3514 [union a b]]]
+ 
+> ~l
+=========================
+Step 22 [2]
+
+?- falsum
+
+1. [member term3514 b]
+2. [[member term3514 [union a b]] => falsum]
+ 
+> =>l
+=========================
+Step 23 [2]
+
+?- [member term3514 [union a b]]
+
+1. [member term3514 b]
+2. [[member term3514 [union a b]] => falsum]
+ 
+> unionr
+=========================
+Step 24 [2]
+
+?- [[member term3514 a] v [member term3514 b]]
+
+1. [member term3514 b]
+2. [[member term3514 [union a b]] => falsum]
+ 
+> vr2
+=========================
+Step 25 [2]
+
+?- [member term3514 b]
+
+1. [member term3514 b]
+2. [[member term3514 [union a b]] => falsum]
+ 
+> hyp
+=========================
+Step 26 [1]
+
+?- [subset [inter [comp a] [comp b]] [comp [union a b]]]
+
+ 
+> subsetr
+=========================
+Step 27 [1]
+
+?- [all x [[member x [inter [comp a] [comp b]]] => [member x [comp [union a b]]]]]
+
+ 
+> allr
+=========================
+Step 28 [1]
+
+?- [[member term3515 [inter [comp a] [comp b]]] => [member term3515 [comp [union a b]]]]
+
+ 
+> =>r
+=========================
+Step 29 [1]
+
+?- [member term3515 [comp [union a b]]]
+
+1. [member term3515 [inter [comp a] [comp b]]]
+ 
+> compr
+=========================
+Step 30 [1]
+
+?- [~ [member term3515 [union a b]]]
+
+1. [member term3515 [inter [comp a] [comp b]]]
+ 
+> ~r
+=========================
+Step 31 [1]
+
+?- [[member term3515 [union a b]] => falsum]
+
+1. [member term3515 [inter [comp a] [comp b]]]
+ 
+> =>r
+=========================
+Step 32 [1]
+
+?- falsum
+
+1. [member term3515 [union a b]]
+2. [member term3515 [inter [comp a] [comp b]]]
+ 
+> unionl
+=========================
+Step 33 [1]
+
+?- falsum
+
+1. [[member term3515 a] v [member term3515 b]]
+2. [member term3515 [inter [comp a] [comp b]]]
+ 
+> interl
+=========================
+Step 34 [1]
+
+?- falsum
+
+1. [[member term3515 a] v [member term3515 b]]
+2. [[member term3515 [comp a]] & [member term3515 [comp b]]]
+ 
+> &l
+=========================
+Step 35 [1]
+
+?- falsum
+
+1. [[member term3515 a] v [member term3515 b]]
+2. [member term3515 [comp a]]
+3. [member term3515 [comp b]]
+ 
+> compl
+=========================
+Step 36 [1]
+
+?- falsum
+
+1. [[member term3515 a] v [member term3515 b]]
+2. [~ [member term3515 a]]
+3. [member term3515 [comp b]]
+ 
+> ~l
+=========================
+Step 37 [1]
+
+?- falsum
+
+1. [[member term3515 a] v [member term3515 b]]
+2. [[member term3515 a] => falsum]
+3. [member term3515 [comp b]]
+ 
+> =>l
+=========================
+Step 38 [1]
+
+?- [member term3515 a]
+
+1. [[member term3515 a] v [member term3515 b]]
+2. [[member term3515 a] => falsum]
+3. [member term3515 [comp b]]
+ 
+> vl
+=========================
+Step 39 [2]
+
+?- [member term3515 a]
+
+1. [member term3515 a]
+2. [[member term3515 a] => falsum]
+3. [member term3515 [comp b]]
+ 
+> hyp
+=========================
+Step 40 [1]
+
+?- [member term3515 a]
+
+1. [member term3515 b]
+2. [[member term3515 a] => falsum]
+3. [member term3515 [comp b]]
+ 
+> compl
+=========================
+Step 41 [1]
+
+?- [member term3515 a]
+
+1. [member term3515 b]
+2. [[member term3515 a] => falsum]
+3. [~ [member term3515 b]]
+ 
+> ~l
+=========================
+Step 42 [1]
+
+?- [member term3515 a]
+
+1. [member term3515 b]
+2. [[member term3515 a] => falsum]
+3. [[member term3515 b] => falsum]
+ 
+> (swap 2 3)
+=========================
+Step 43 [1]
+
+?- [member term3515 a]
+
+1. [member term3515 b]
+2. [[member term3515 b] => falsum]
+3. [[member term3515 a] => falsum]
+ 
+> exp
+=========================
+Step 44 [1]
+
+?- falsum
+
+1. [member term3515 b]
+2. [[member term3515 b] => falsum]
+3. [[member term3515 a] => falsum]
+ 
+> =>l
+=========================
+Step 45 [1]
+
+?- [member term3515 b]
+
+1. [member term3515 b]
+2. [[member term3515 b] => falsum]
+3. [[member term3515 a] => falsum]
+ 
+> hyp
+proved
+

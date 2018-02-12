@@ -1,0 +1,249 @@
+=========================
+Step 1 [1]
+
+?- [=s [diff a a] e!]
+
+ 
+> =sr
+=========================
+Step 2 [1]
+
+?- [[subset [diff a a] e!] & [subset e! [diff a a]]]
+
+ 
+> &r
+=========================
+Step 3 [2]
+
+?- [subset [diff a a] e!]
+
+ 
+> subsetr
+=========================
+Step 4 [2]
+
+?- [all x [[member x [diff a a]] => [member x e!]]]
+
+ 
+> allr
+=========================
+Step 5 [2]
+
+?- [[member term3502 [diff a a]] => [member term3502 e!]]
+
+ 
+> =>r
+=========================
+Step 6 [2]
+
+?- [member term3502 e!]
+
+1. [member term3502 [diff a a]]
+ 
+> diffl
+=========================
+Step 7 [2]
+
+?- [member term3502 e!]
+
+1. [[member term3502 a] & [~ [member term3502 a]]]
+ 
+> &l
+=========================
+Step 8 [2]
+
+?- [member term3502 e!]
+
+1. [member term3502 a]
+2. [~ [member term3502 a]]
+ 
+> ~l
+=========================
+Step 9 [2]
+
+?- [member term3502 e!]
+
+1. [member term3502 a]
+2. [[member term3502 a] => falsum]
+ 
+> exp
+=========================
+Step 10 [2]
+
+?- falsum
+
+1. [member term3502 a]
+2. [[member term3502 a] => falsum]
+ 
+> =>l
+=========================
+Step 11 [2]
+
+?- [member term3502 a]
+
+1. [member term3502 a]
+2. [[member term3502 a] => falsum]
+ 
+> hyp
+=========================
+Step 12 [1]
+
+?- [subset e! [diff a a]]
+
+ 
+> subsetr
+=========================
+Step 13 [1]
+
+?- [all x [[member x e!] => [member x [diff a a]]]]
+
+ 
+> allr
+=========================
+Step 14 [1]
+
+?- [[member term3503 e!] => [member term3503 [diff a a]]]
+
+ 
+> =>r
+=========================
+Step 15 [1]
+
+?- [member term3503 [diff a a]]
+
+1. [member term3503 e!]
+ 
+> diffr
+=========================
+Step 16 [1]
+
+?- [[member term3503 a] & [~ [member term3503 a]]]
+
+1. [member term3503 e!]
+ 
+> &r
+=========================
+Step 17 [2]
+
+?- [member term3503 a]
+
+1. [member term3503 e!]
+ 
+> exp
+=========================
+Step 18 [2]
+
+?- falsum
+
+1. [member term3503 e!]
+ 
+> defe!
+=========================
+Step 19 [2]
+
+?- falsum
+
+1. [all x [~ [member x e!]]]
+2. [member term3503 e!]
+ 
+> (alll term3503)
+=========================
+Step 20 [2]
+
+?- falsum
+
+1. [~ [member term3503 e!]]
+2. [all x [~ [member x e!]]]
+3. [member term3503 e!]
+ 
+> ~l
+=========================
+Step 21 [2]
+
+?- falsum
+
+1. [[member term3503 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3503 e!]
+ 
+> =>l
+=========================
+Step 22 [2]
+
+?- [member term3503 e!]
+
+1. [[member term3503 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3503 e!]
+ 
+> hyp
+=========================
+Step 23 [1]
+
+?- [~ [member term3503 a]]
+
+1. [member term3503 e!]
+ 
+> ~r
+=========================
+Step 24 [1]
+
+?- [[member term3503 a] => falsum]
+
+1. [member term3503 e!]
+ 
+> =>r
+=========================
+Step 25 [1]
+
+?- falsum
+
+1. [member term3503 a]
+2. [member term3503 e!]
+ 
+> defe!
+=========================
+Step 26 [1]
+
+?- falsum
+
+1. [all x [~ [member x e!]]]
+2. [member term3503 a]
+3. [member term3503 e!]
+ 
+> (alll term3503)
+=========================
+Step 27 [1]
+
+?- falsum
+
+1. [~ [member term3503 e!]]
+2. [all x [~ [member x e!]]]
+3. [member term3503 a]
+4. [member term3503 e!]
+ 
+> ~l
+=========================
+Step 28 [1]
+
+?- falsum
+
+1. [[member term3503 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3503 a]
+4. [member term3503 e!]
+ 
+> =>l
+=========================
+Step 29 [1]
+
+?- [member term3503 e!]
+
+1. [[member term3503 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3503 a]
+4. [member term3503 e!]
+ 
+> hyp
+proved
+

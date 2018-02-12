@@ -1,0 +1,87 @@
+=========================
+Step 1 [1]
+
+?- [member e! [powerset a]]
+
+ 
+> powersetr
+=========================
+Step 2 [1]
+
+?- [subset e! a]
+
+ 
+> subsetr
+=========================
+Step 3 [1]
+
+?- [all x [[member x e!] => [member x a]]]
+
+ 
+> allr
+=========================
+Step 4 [1]
+
+?- [[member term3512 e!] => [member term3512 a]]
+
+ 
+> =>r
+=========================
+Step 5 [1]
+
+?- [member term3512 a]
+
+1. [member term3512 e!]
+ 
+> defe!
+=========================
+Step 6 [1]
+
+?- [member term3512 a]
+
+1. [all x [~ [member x e!]]]
+2. [member term3512 e!]
+ 
+> (alll term3512)
+=========================
+Step 7 [1]
+
+?- [member term3512 a]
+
+1. [~ [member term3512 e!]]
+2. [all x [~ [member x e!]]]
+3. [member term3512 e!]
+ 
+> ~l
+=========================
+Step 8 [1]
+
+?- [member term3512 a]
+
+1. [[member term3512 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3512 e!]
+ 
+> exp
+=========================
+Step 9 [1]
+
+?- falsum
+
+1. [[member term3512 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3512 e!]
+ 
+> =>l
+=========================
+Step 10 [1]
+
+?- [member term3512 e!]
+
+1. [[member term3512 e!] => falsum]
+2. [all x [~ [member x e!]]]
+3. [member term3512 e!]
+ 
+> hyp
+proved
+
